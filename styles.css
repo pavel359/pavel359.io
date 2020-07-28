@@ -1,0 +1,58 @@
+
+body {
+    background-image:  url('BackDavid.jpg');
+    background-size: 10% 10%;
+}
+
+.davidLink {
+    position: absolute;
+    bottom: 160px;
+    left: 2px;
+}
+
+.display {
+    border:1px solid white;
+    width:500px;
+    height: 170px;
+    display: inline-block;
+}
+
+h1 {
+    font-family: "Dutch801 Rm WGL4 BT";
+    font-size:250%;
+    color: white;
+}
+
+p{
+    font-family: "Verdana";
+    font-size:120%;
+    color: white;
+}
+
+a:link {
+    font-family: Verdana;
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    font-family: Verdana;
+    color: blueviolet;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    font-family: Verdana;
+    color: orangered;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    font-family: Verdana;
+    color: orangered;
+    background-color: transparent;
+    text-decoration: none;
+}
