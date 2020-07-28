@@ -18,14 +18,18 @@ body {
 }
 
 h1 {
+    -webkit-text-stroke-width: 1.6px;
+    -webkit-text-stroke-color: black;
     font-family: "Dutch801 Rm WGL4 BT";
-    font-size:250%;
+    font-size:300%;
     color: white;
 }
 
 p{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     font-family: "Verdana";
-    font-size:120%;
+    font-size:180%;
     color: white;
 }
 
