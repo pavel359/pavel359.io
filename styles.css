@@ -1,7 +1,31 @@
 
 body {
-    background-image:  url('BackDavid.jpg');
-    background-size: 10% 10%;
+    background-color:white;
+}
+
+.NavigationMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.ListNavigation {
+    float: left;
+}
+
+.ListNavigation .NavigationButton {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: Verdana;
+}
+
+.ListNavigation .NavigationButton:hover {
+    background-color: #111111;
 }
 
 #t01 {
@@ -32,7 +56,7 @@ body {
 }
 
 #t01 caption {
-    font-family: "Verdana";
+    font-family: Verdana;
     font-size:200%;
     color: white;
     text-align: center;
@@ -40,17 +64,10 @@ body {
     -webkit-text-stroke-color: black;
 }
 
-.davidLink {
-    position: absolute;
+.davidLinkDisplay {
+    position: fixed;
     bottom: 160px;
     left: 2px;
-}
-
-.display {
-    border:1px solid white;
-    width:500px;
-    height: 170px;
-    display: inline-block;
 }
 
 .displayList {
@@ -62,39 +79,179 @@ body {
     margin: 10px;
 }
 
-h1 {
-    -webkit-text-stroke-width: 1.6px;
-    -webkit-text-stroke-color: black;
-    font-family: "Dutch801 Rm WGL4 BT";
-    font-size:300%;
-    color: white;
-}
-
-p{
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    font-family: "Verdana";
-    font-size:180%;
-    color: white;
-}
-
-a:link {
+.davidLink:link {
     font-family: Verdana;
     color: blue;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:visited {
+.davidLink:visited {
     font-family: Verdana;
     color: blueviolet;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:hover, a:active {
+.davidLink:hover, .davidLink:active {
     font-family: Verdana;
     color: orangered;
     background-color: transparent;
     text-decoration: none;
 }
+
+h1 {
+    font-size:10vw;
+}
+
+form {
+    padding: 20px;
+    font-family: Verdana;
+}
+
+input, select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    outline: none;
+}
+
+textarea {
+    outline: none;
+    resize: vertical;
+    padding:15px;
+    border-radius:15px;
+    border:0;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70% 70%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox>input:not(:disabled):active+span::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox>input:focus:not(:checked)+span::before {
+    border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("chek.png");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox>input:disabled+span::before {
+    background-color: #e9ecef;
+}
+
+/* для элемента input c type="radio" */
+.custom-radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+/* для элемента label связанного с .custom-radio */
+.custom-radio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    margin: 1px;
+}
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: #ddd;
+    border-radius: 50%;
+    transition: .3s background-color;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+}
+/* стили при наведении курсора на радио */
+.custom-radio:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+}
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked+label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+

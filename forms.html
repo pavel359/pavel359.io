@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="module" src="formsValidtion.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>сбор данных для чипизации</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="NavigationMenu">
+        <li class="ListNavigation"><a class="NavigationButton" href="index.html">Home</a></li>
+        <li class="ListNavigation"><a class="NavigationButton" href="#news">News</a></li>
+        <li class="ListNavigation"><a class="NavigationButton" href="Contact.html">Contact</a></li>
+        <li class="ListNavigation"><a class="NavigationButton" href="About.html">About</a></li>
+        <li class="ListNavigation"><a class="NavigationButton" href="forms.html">Чипизация</a></li>
+    </ul>
+<div>
+    <form method="post" autocomplete="on">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Имя" required><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Фамилия" required><br>
+        <label for="radio01">Пол:</label><br>
+        <div id="radio01">
+            <input class="custom-radio" type="radio" id="sex-1" name="sex" value="мужчина">
+            <label for="sex-1">мужчина</label><br>
+            <input class="custom-radio" type="radio" id="sex-2" name="sex" value="Женщина">
+            <label for="sex-2">Женщина</label><br>
+            <input class="custom-radio" type="radio" id="sex-3" name="sex" value="Другое">
+            <label for="sex-3">Другое</label><br><br>
+        </div>
+        <label for="smthng">Опишите себя:</label><br>
+        <textarea id="smthng" name="message" rows="5" cols="70" placeholder="напишите что-нибудь..."></textarea><br><br>
+        <label for="browsers">Выберите браузер через который вы сейчас сидите:</label><br>
+        <select id="browsers" name="browsers">
+            <option value="volvo">Internet Explorer</option>
+            <option value="saab">Firefox</option>
+            <option value="fiat">Chrome</option>
+            <option value="audi">Opera</option>
+            <option value="audi">Safari</option>
+            <option value="audi">Яндекс браузер</option>
+            <option value="audi">Edge</option>
+        </select><br><br>
+        <label for="favoritegame">Любимая игра:</label><br>
+        <input list="favoritegame" name="favoritegame" required>
+        <datalist id="favoritegame">
+            <option value="Rocket League">
+            <option value="League of Legends">
+            <option value="DOTA 2">
+            <option value="StarCraft 2">
+            <option value="Rainbow Six Siege">
+            <option value="">
+        </datalist><br><br>
+        <label for="birthday">Дата рождения:</label><br>
+        <input type="date" id="birthday" name="birthday" required><br><br>
+        <label for="mail">Введите свой email:</label><br>
+        <input type="email" id="mail" name="mail" required><br><br>
+        <label for="myfile">Вставьте свое фото:</label><br>
+        <input type="file" id="myfile" name="myfile" required><br><br>
+        <label for="phone">Введите свой номер телефона:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="\+7[\(]{0,1}9[0-9]{2}[\)]{0,1}\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+               placeholder="+7(___)___-__-__" required><br>
+        <small>Формат: +7(xxx)xxx-xx-xx</small><br><br>
+        <label for="homepage">Ссылка на страницу ВКонтакте:</label><br>
+        <input type="url" id="homepage" name="homepage" required><br><br>
+        <label for="cardnumber">Номер карты:</label><br>
+        <input type="number" id="cardnumber" name="cardnumber" maxlength="16" size="13" required><br><br>
+        <label for="pin">PIN:</label><br>
+        <input type="number" id="pin" name="pin" maxlength="4" size="1" required><br><br>
+        <label for="cvv">cvv2/cvc2:</label><br>
+        <input type="number" id="cvv" name="cvv" maxlength="4" size="1" required><br><br>
+        <label class="custom-checkbox">
+            <input type="checkbox" value="value-1">
+            <span>Я согласен на обработку персональных данных</span>
+        </label><br>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+</body>
+</html>
