@@ -113,6 +113,7 @@ form {
     margin: 0px 0px;
     padding: 20px;
     font-family: Verdana;
+    width:100%;
 }
 
 input, select {
