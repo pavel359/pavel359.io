@@ -34,8 +34,6 @@ body {
     font-family: arial, sans-serif;
     width: 100%;
     border-collapse: collapse;
-    width: 100%;
-    overflow-x:auto;
 }
 
 #t01 tr:hover {
@@ -148,6 +146,10 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+@media screen and (max-device-width: 900px) {
+    input, select, textarea {width: 80%;}
 }
 
 .custom-checkbox>input {
