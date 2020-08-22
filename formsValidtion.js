@@ -32,3 +32,14 @@ setInputFilter(document.getElementById("phone"), function(value) {
 });
 
 
+let s=0;
+function showHiddenElement() {
+    if (s==0){
+        s=1;
+        document.getElementById("panel").style.display = "block";
+    }
+    else {
+        s=0;
+        document.getElementById("panel").style.display = "none";
+    }
+}

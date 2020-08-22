@@ -1,6 +1,7 @@
 
 body {
     background-color:white;
+    margin: 0;
 }
 
 .NavigationMenu {
@@ -12,7 +13,7 @@ body {
 }
 
 .ListNavigation {
-    float: left;
+    display: inline-block;
 }
 
 .ListNavigation .NavigationButton {
@@ -34,6 +35,10 @@ body {
     width: 100%;
     border-collapse: collapse;
     width: 100%;
+}
+
+#t01 tr:hover {
+    background-color:blue;
 }
 
 #t01 tr:nth-child(even) {
@@ -110,7 +115,7 @@ form {
 }
 
 input, select {
-    width: 30%;
+    width: 350px;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -122,6 +127,8 @@ input, select {
 }
 
 textarea {
+    width: 320px;
+    height: 80px;
     outline: none;
     resize: vertical;
     padding:15px;
@@ -131,7 +138,7 @@ textarea {
 }
 
 input[type=submit] {
-    width: 30%;
+    width: 350px;
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -255,3 +262,9 @@ input[type=submit]:hover {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 
+/*clearfix hack*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
