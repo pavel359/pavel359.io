@@ -110,6 +110,7 @@ h1 {
 }
 
 form {
+    margin: 0 20px;
     padding: 20px;
     font-family: Verdana;
 }
