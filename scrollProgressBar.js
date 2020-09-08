@@ -4,7 +4,7 @@ window.addEventListener('scroll', function() {
     console.log(document.body.offsetHeight);
     console.log(document.body.scrollTop);
     console.log(document.body.clientHeight);
-    let progressValue = Math.round(document.body.scrollTop/(document.body.offsetHeight-document.body.clientHeight)*100);
+    let progressValue = Math.round((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0)/(document.body.offsetHeight-document.body.clientHeight)*100);
     console.log(progressValue);
     document.getElementById('progressbar').setAttribute('value',`${progressValue}`);
 });
