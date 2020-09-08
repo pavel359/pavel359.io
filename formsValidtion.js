@@ -30,7 +30,6 @@ setInputFilter(document.getElementById("cvv"), function(value) {
 setInputFilter(document.getElementById("phone"), function(value) {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp
 });
-
 let s=0;
 function showHiddenElement() {
     if (s==0){
