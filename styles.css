@@ -3,21 +3,53 @@ body {
     background-color:white;
     margin: 0;
 }
+::-webkit-progress-bar {
+    background: white;
+}
+::-webkit-progress-value {
+    background: #e1e0de;
+}
+::-moz-progress-bar {
+    background: white;
+}
+.progressbar {
+    position: fixed;
+    z-index: 101;
+    margin: 0px;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border: none;
+}
+
+.opacity {
+    opacity: 0.5;
+}
+
+.opacity:hover {
+    opacity: 1.0;
+}
 
 .NavigationMenu {
+    position: -webkit-sticky;
+    position: sticky; top: 0;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: #333;
 }
 
 .ListNavigation {
     float: left;
 }
 
-.ListNavigation .NavigationButton {
-    display: inline-block;
+.NavigationButton, .dropbtn{
+    display: block;
     color: white;
     text-align: center;
     padding: 16px;
@@ -25,8 +57,40 @@ body {
     font-family: Verdana;
 }
 
-.ListNavigation .NavigationButton:hover {
+.NavigationButton:hover,.dropdown:hover .dropbtn {
     background-color: #111111;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: Verdana;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .ListNavigation {float: none;}
 }
 
 #t01 {
@@ -67,7 +131,20 @@ body {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
+#calendar table {
+    border-collapse: collapse;
+}
 
+#calendar td, th {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+}
+
+#calendar th {
+    font-weight: bold;
+    background-color: #E6E6E6;
+}
 .davidLinkDisplay {
     position: fixed;
     bottom: 160px;
@@ -109,34 +186,48 @@ h1 {
 }
 
 form {
+    width: 100%;
     display: inline-block;
     margin: 0px 0px;
     padding: 20px;
     font-family: Verdana;
-    width:100%;
 }
 
 input, select {
     width: 350px;
     padding: 12px 20px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 20px;
     box-sizing: border-box;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     outline: none;
 }
 
+select {
+    width: 350px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input:focus ,textarea:focus {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 2px solid #555;
+}
+
 textarea {
     width: 350px;
     height: 80px;
     outline: none;
-    resize: vertical;
     padding:12px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 20px;
     box-sizing: border-box;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    resize: none;
 }
 
 input[type=submit] {
@@ -149,8 +240,43 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-@media screen and (max-device-width: 900px) {
-    input, select, textarea {width: 80%;}
+.custom-site-search {
+    width: auto;
+    padding: 5px 5px;
+    font-family: Verdana;
+}
+
+.custom-site-search>input[type=text] {
+    margin: 0 0;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 15px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+.custom-site-search>input[type=text]:focus {
+    width: 700px;
+}
+
+@media only screen and (max-device-width: 480px) {
+    input, select, textarea, .custom-checkbox>span {width: 80%;}
+    .custom-site-search>input[type=text] {width: auto}
+    .custom-site-search {float:none;}
+}
+
+@media (min-width: 1675px) {
+
+}
+
+@media (min-width: 993px) {
+
 }
 
 .custom-checkbox>input {
@@ -161,6 +287,7 @@ input[type=submit]:hover {
 
 /* для элемента label, связанного с .custom-checkbox */
 .custom-checkbox>span {
+    width: 100%;
     display: inline-flex;
     align-items: center;
     user-select: none;
